@@ -58,6 +58,7 @@ int main()
 	string dirName;
 
 	cout << "Enter directory name: ";
+	/*C:\Users\manuel\[nom_du_répertoire]*/
 	cin >> dirName;
 
 	list<string> fileList;
