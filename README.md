@@ -6,7 +6,7 @@
 
 librairie: 
 
-opengl32.lib \n
+opengl32.lib <br>
 sfml-system.lib
 sfml-window.lib
 sfml-graphics.lib
