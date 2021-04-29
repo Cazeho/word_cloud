@@ -203,6 +203,25 @@ int main()
 			<< (*mit).second.value
 			<< endl;
 	}
+	
+	std::ofstream outfile("C:\\Users\\manuel\\Desktop\\C++\\process.txt");
+
+	for (std::vector< word_mapping >::const_iterator mit = result.begin();
+		mit != result.end();
+		mit++)
+	{
+		outfile << (*mit).first << std::endl;
+	}
+
+	outfile.close();
+
+
+
+
+	string choix;
+	system("pause");
+	cout << "choisir";
+	cin >> choix;
 
 
 	return 0;
