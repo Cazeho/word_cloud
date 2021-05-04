@@ -123,7 +123,7 @@ int main()
 using namespace std;
 
 template <class T>
-struct less_second : std::binary_function<T, T, bool>
+struct less_second : binary_function<T, T, bool>
 {
 	inline bool operator()(const T& lhs, const T& rhs)
 	{
@@ -152,11 +152,10 @@ bool filter(char c)
 }
 
 const string path = "C:\\Users\\manuel\\Desktop\\C++\\test.txt";
-//const string path = "/home/andy/NetBeansProjects/WordCount/Hamlet.txt";  //Linux
 
 int main()
 {
-	typedef std::pair< string, WordCounter > word_mapping;
+	typedef pair< string, WordCounter > word_mapping;
 
 	map<string, WordCounter> counter;
 
@@ -187,30 +186,31 @@ int main()
 
 	map< string, WordCounter, less<string> >::iterator it = counter.begin();
 
-	
+
 
 	// And then sort and display the result:
-	std::vector< word_mapping > result(counter.begin(), counter.end());
-	std::sort(result.rbegin(), result.rend(), less_second<word_mapping>());
+	vector< word_mapping > result(counter.begin(), counter.end());
+	sort(result.rbegin(), result.rend(), less_second<word_mapping>());
 
-	for (std::vector< word_mapping >::const_iterator mit = result.begin();
+	for (vector< word_mapping >::const_iterator mit = result.begin();
 		mit != result.end();
 		mit++)
 	{
-		cout << std::setw(15)
+		cout << setw(15)
 			<< (*mit).first
 			<< "\t"
 			<< (*mit).second.value
 			<< endl;
 	}
-	
-	std::ofstream outfile("C:\\Users\\manuel\\Desktop\\C++\\process.txt");
 
-	for (std::vector< word_mapping >::const_iterator mit = result.begin();
+
+	ofstream outfile("C:\\Users\\manuel\\Desktop\\C++\\process.txt");
+
+	for (vector< word_mapping >::const_iterator mit = result.begin();
 		mit != result.end();
 		mit++)
 	{
-		outfile << (*mit).first << std::endl;
+		outfile << (*mit).first << endl;
 	}
 
 	outfile.close();
@@ -226,7 +226,6 @@ int main()
 
 	return 0;
 }
-
 
 
 */
