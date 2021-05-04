@@ -19,6 +19,17 @@ void text::ecrireFile(string path,char *values) {
 
 	outfile.close();
 
+void text::lireFile(string dirName) {
+	string combine;
+	string i;
+	ifstream dataFile(dirName);
+
+
+	if (dataFile) {
+		while (getline(dataFile, i))
+			combine += " " + i;
+	}
+	cout << combine << endl;
 
 
 }
