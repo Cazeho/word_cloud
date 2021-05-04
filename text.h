@@ -12,6 +12,7 @@ class text {
 		void modifier_parameterWorCloud();
 
 		void ecrireFile(string path,char *values);
+		void lireFile(string dirName);
 		
 
 
