@@ -224,6 +224,17 @@ int main()
 	cin >> choix;
 
 
+
+	string dirName;
+	dirName = "C:\\Users\\manuel\\Desktop\\C++\\process.txt";
+
+	text t;
+
+	t.lireFile(dirName);
+
+	
+
+
 	return 0;
 }
 
