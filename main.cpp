@@ -4,33 +4,27 @@
 #include <sstream>
 #include <algorithm>
 #include <map>
+#include <iostream>
+#include <string>
+#include <list>
+#include <fstream>
+#include <stdio.h>
+#include <windows.h>
+#include <cstdio>
+#include <cstdlib>
+#include <map>
+#include <sstream>
+
+#include "text.h"
+
+
 #include <string>
 #include <vector>
 using namespace std;
-string removeWord(string str, string word)
-{
-	// Check if the word is present in string
-	// If found, remove it using removeAll()
-	if (str.find(word) != string::npos)
-	{
-		size_t p = -1;
-		// To cover the case
-		// if the word is at the
-		// beginning of the string
-		// or anywhere in the middle
-		string tempWord = word + " ";
-		while ((p = str.find(word)) != string::npos)
-			str.replace(p, tempWord.length(), "");
-		// To cover the edge case
-		// if the word is at the
-		// end of the string
-		tempWord = " " + word;
-		while ((p = str.find(word)) != string::npos)
-			str.replace(p, tempWord.length(), "");
-	}
-	// Return the resultant string
-	return str;
-}
+
+
+
+
 template <class T>
 struct less_second : binary_function<T, T, bool>
 {
@@ -103,13 +97,18 @@ int main()
 	outfile.close();
 	string choix;
 	system("pause");
-	cout << "choisir";
+	cout << "choisir: ";
 	cin >> choix;
 	string dirName;
 	dirName = "C:\\Users\\manuel\\Desktop\\C++\\process.txt";
+
+
 	text t;
-	t.lireFile(dirName);
-	
-	cout <<removeWord(t.lireFile(dirName), choix)<< endl;
+	 t.lireFile(dirName);
+
+	cout << t.lireFile(dirName) << endl;
+	cout << "----" << endl;
+
+	cout << t.removeWord(t.lireFile(dirName), choix) << endl;
 	return 0;
 }
